@@ -1,0 +1,24 @@
+
+input[type=text] {
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#login_input{
+    margin-left: 47px;
+}
+
+form {
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
+input[type=submit] {
+    margin-left: 95px;
+}
+
+h1{
+    margin-top: 10%;
+    margin-left: 40%;
+}
