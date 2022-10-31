@@ -13,11 +13,11 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      //  resp.setContentType("text/html");
+        resp.setContentType("text/html");
         String login = req.getParameter("login");
         String password = req.getParameter("password");
-        req.setAttribute("loginFromFrom",login);
-        req.setAttribute("passFromForm", password);
-        System.out.println(login+" "+password);
+        req.getServletContext().setAttribute("loginFromFrom", login);
+        req.getServletContext().setAttribute("passFromForm", password);
+        resp.sendRedirect("/success.html");
     }
 }
