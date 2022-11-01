@@ -16,8 +16,10 @@ public class LoginServlet extends HttpServlet {
         resp.setContentType("text/html");
         String login = req.getParameter("login");
         String password = req.getParameter("password");
-        req.getServletContext().setAttribute("loginFromFrom", login);
-        req.getServletContext().setAttribute("passFromForm", password);
+        if (login.equals("alex") && password.equals("123")) {
+            req.getServletContext().setAttribute("loginFromFrom", login);
+            req.getServletContext().setAttribute("passFromForm", password);
+        }
         resp.sendRedirect("/success.html");
     }
 }

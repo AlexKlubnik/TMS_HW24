@@ -14,7 +14,7 @@ public class LoginFilter implements Filter {
         String passwordFromForm = (String) servletRequest.getServletContext().getAttribute("passFromForm");
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
-        if (userNameFromForm.equals("alex") && passwordFromForm.equals("123")) {
+        if (userNameFromForm!=null && passwordFromForm!=null) {
             servletRequest.getRequestDispatcher("/success.html").forward(servletRequest, servletResponse);
         } else resp.sendError(403, "Oops, you entered wrong username or password");
     }
