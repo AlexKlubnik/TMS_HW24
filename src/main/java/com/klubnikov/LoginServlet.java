@@ -23,6 +23,7 @@ public class LoginServlet extends HttpServlet {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
 
+
 //        String initLogin = (String) getServletContext().getAttribute("init-login");
 //        String initPass = (String) getServletContext().getAttribute("init-pass");
 
@@ -34,5 +35,6 @@ public class LoginServlet extends HttpServlet {
             req.getSession().setAttribute("passFromSession", password);
         }
         resp.sendRedirect("/success.html");
+
     }
 }

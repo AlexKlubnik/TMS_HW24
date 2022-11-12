@@ -16,9 +16,10 @@ public class LoginFilter implements Filter {
         String userNameFromSession = (String) req.getSession().getAttribute("loginFromSession");
         String passwordFromSession = (String) req.getSession().getAttribute("passFromSession");
 
-
         if (userNameFromSession!=null && passwordFromSession!=null) {
             servletRequest.getRequestDispatcher("/success.html").forward(servletRequest, servletResponse);
         } else resp.sendError(403, "Oops, you entered wrong username or password");
+        req.getSession().removeAttribute("loginFromSession");
+        req.getSession().removeAttribute("passFromSession");
     }
 }
